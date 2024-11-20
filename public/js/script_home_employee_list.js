@@ -1,6 +1,23 @@
 var table = document.getElementById('employee_table');
 var text_msg = document.getElementById('msg');
 
+// Row Button
+table_add_button = () => {
+    const row = document.createElement('tr');
+    const col = document.createElement('td');
+    const button_addUser = document.createElement('button');
+
+    button_addUser.innerHTML = '+';
+    button_addUser.onclick = function(){ window.location.href ='/employee' };
+    
+    col.colSpan = 100;
+    col.className = 'button';
+    
+    col.appendChild(button_addUser);
+    row.appendChild(col);
+    table.appendChild(row);
+}
+
 // Row Template
 table_add_row = ( id, name, designation, email, phone, age) => {
     const row = document.createElement('tr');
@@ -103,6 +120,7 @@ table_populate = () => {
                         data[i].age
                     )
                 }
+                table_add_button()
             }
         }
     }
