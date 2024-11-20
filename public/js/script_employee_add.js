@@ -37,10 +37,6 @@ post_employee = () => {
     // Send request with json data
     xhr.send(formData);
     
-
-   
-    ///////////////////////////////////////////////////////////////////
-
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             

@@ -20,6 +20,8 @@ const index = (req, res, next) => {
 // Show Single Employee
 const show = (req, res, next) => {
     let employeeID = req.body.employeeID
+
+    console.log('SHOW');
     
     EMPLOYEE.findById(employeeID)
     .then(response => {
@@ -38,14 +40,6 @@ const show = (req, res, next) => {
 
 // Store New Employee Entry
 const store = (req, res, next) => {
-
-    console.log('--------------------------');
-    console.log('Body: ');
-    console.log(req.body);
-    console.log('File: ');
-    console.log(req.file);
-    console.log('--------------------------');
-    
 
     let newEmployee = new EMPLOYEE({
         name: req.body.name,

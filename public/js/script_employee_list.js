@@ -70,10 +70,10 @@ table_populate = () => {
     var xhr = new XMLHttpRequest();
     
     // Set Request Type and URL Target
-    xhr.open('GET', '/api/employee')
+    xhr.open('GET', '/api/employee/show')
 
     // Set Content Type
-    xhr.setRequestHeader("Content-type", "application/json");
+    // xhr.setRequestHeader("Content-type", "application/json");
 
     // Add Authentication to header
     xhr.setRequestHeader('Authorization', 'Bearer ' + TOKEN);

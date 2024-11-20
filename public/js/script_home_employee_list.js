@@ -1,4 +1,4 @@
-var table = document.getElementById('myTable');
+var table = document.getElementById('employee_table');
 var text_msg = document.getElementById('msg');
 
 // Row Template
@@ -73,7 +73,7 @@ table_populate = () => {
     xhr.open('GET', '/api/employee')
 
     // Set Content Type
-    xhr.setRequestHeader("Content-type", "application/json");
+    // xhr.setRequestHeader("Content-type", "application/json");
 
     // Add Authentication to header
     xhr.setRequestHeader('Authorization', 'Bearer ' + TOKEN);
