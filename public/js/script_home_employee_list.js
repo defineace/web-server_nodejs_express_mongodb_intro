@@ -6,13 +6,14 @@ table_add_button = () => {
     const row = document.createElement('tr');
     const col = document.createElement('td');
     const button_addUser = document.createElement('button');
+    const span = document.createElement('span');
 
-    button_addUser.innerHTML = '+';
+    span.innerHTML = '+';
     button_addUser.onclick = function(){ window.location.href ='/employee' };
-    
     col.colSpan = 100;
     col.className = 'button';
     
+    button_addUser.appendChild(span);
     col.appendChild(button_addUser);
     row.appendChild(col);
     table.appendChild(row);
