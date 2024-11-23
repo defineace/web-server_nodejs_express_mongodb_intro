@@ -24,7 +24,9 @@ post_employee = () => {
     formData.append("phone", input_phone.value);
     formData.append("age", input_age.value);
     formData.append("avatar", input_file.files[0]);
-    
+
+    console.log(formData);
+
     // XMLH Request
     var xhr = new XMLHttpRequest();
     

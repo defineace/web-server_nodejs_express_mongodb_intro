@@ -26,12 +26,30 @@
             <img src="./assets/image -  b_roll - avatar placeholder 1.png" id="avatar" class="container_employee_details_container_avatar_img">
             <br>
             <input type="file" id="myFile">
+            
+            <script>
+                var avatar = document.getElementById("avatar");
+                var input_file = document.getElementById("myFile");
+
+                input_file.addEventListener('change', (event) => {
+                    const file = event.target.files[0]; // Get the selected file
+
+                    if (file) {
+                        const reader = new FileReader();
+                        
+                        // Define what happens when the file is read
+                        reader.onload = function(e) {
+                            avatar.src = e.target.result; // Set the image source to the result of FileReader
+                        };
+                        
+                        // Read the file as a data URL
+                        reader.readAsDataURL(file);
+                    }
+                });
+            </script>
         </div>
 
         <div class="container_employee_details_container_information">
-            <p>Employee ID</p>
-            <input type="text" id="employeeID" class="container_employee_details_container_information_input">
-
             <p>Name</p>
             <input type="text" id="name" class="container_employee_details_container_information_input">
 
@@ -48,55 +66,18 @@
             <input type="text" id="age" class="container_employee_details_container_information_input">
         </div>
 
-        <br>
-        <br>
         <div class="container_employee_details_container_action">
             <button onclick="employee_add()">Add Employee</button>
             <button onclick="employee_update()">Update Employee</button>
             <button>Delete Employee</button>
-            <button onclick="clearInput()">Clear</button>
         </div>
         
-    </div>
-
-    <h2>Employee Hours</h2>
-    <div class="container_employee_hours">
-
-        <table class="container_employee_hours_table">
-            <tr>
-                <th><h3>Pay Period ID</h3></th>
-                <th><h3>Pay Period</h3></th>
-                <th><h3>Monday</h3></th>
-                <th><h3>Tuesday</h3></th>
-                <th><h3>Wednesday</h3></th>
-                <th><h3>Thursday</h3></th>
-                <th><h3>Friday</h3></th>
-                <th><h3>Saturday</h3></th>
-                <th><h3>Sunday</h3></th>
-            </tr>
-
-            <tr>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="container_employee_hours_table_column"><input type="text" style="width: 10em;"></td>
-                <td class="button"><button><span>-</span></button><button><span>+</span></button></td>
-            </tr>
-        </table>
     </div>
 
     <script src="../js/script_employee_add.js"></script>
     <script src="../js/script_employee_search.js"></script>
     <script src="../js/script_employee_update.js"></script>
     <script src="../js/script_employee_delete.js"></script>
-    <script src="../js/script_employee_list.js"></script>
-    <script src="../js/script_employee_img.js"></script>
-    <script src="../js/script_employee_clearInput.js"></script>
 
 </body>
 
