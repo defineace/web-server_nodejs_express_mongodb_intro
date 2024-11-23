@@ -1,0 +1,16 @@
+.section_container{
+    border: 3px solid black; background-color: rgb(228, 228, 228, 0.5); margin: 1em; padding: 1em;
+}
+
+.section_title{
+    color: white;
+}
+
+.section_body {
+    border: 2px solid black;
+    
+    padding: 1em;
+    background-color: white;
+
+    text-align: center;
+}

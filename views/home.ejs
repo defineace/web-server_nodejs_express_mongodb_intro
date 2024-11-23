@@ -1,50 +1,45 @@
 <html>
 <head>
     <link rel="stylesheet" href="../css/style_home.css">
+    <link rel="stylesheet" href="../css/style_partial_body.css">
+    <link rel="stylesheet" href="../css/style_partial_navbar.css">
+    <link rel="stylesheet" href="../css/style_partial_search.css">
+    <link rel="stylesheet" href="../css/style_partial_section.css">
 </head>
 
 <body>
+    <%- include('./partials/partial_navbar.ejs') %>
+    <%- include('./partials/partial_search.ejs') %>
 
-    <div class="header_container">
-        <h1 class="header_title">Home</h1>
-        <div class="header_links_container">
-            <a href="/home" class="header_links">Home</a>
-            <a href="/" class="header_links">Log Out</a>
+    <div class="section_container">
+        <div>
+            <h2 class="section_title">Employees</h2>
+        </div>    
+        <div class="section_body">
+            <table class="table_container" id="employee_table">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Designation</th>
+                    <th>Employee Email</th>
+                    <th>Employee Phone Number</th>
+                    <th>Employee Age</th>
+                </tr>
+                <tr>
+                    <td colspan="100" >
+                        <p style="margin: 1em;">No employees to show</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table_button" colspan="100">
+                        <button onclick="window.location.href = '/employee'">+</button>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <p id="msg" class="header_msg">[Server] Welcome</p>
-    </div>
-    
-    <h2>Search Employee</h2>
-    <div class="container_search">
-        <input type="text" class="container_search_input">
-        <button>Search Employee</button>
-    </div>
 
-    <h2>Employees</h2>
-    <div class="container_employees">
-        <table class="container_employees_table" id="employee_table">
-            <tr>
-                <th>Employee ID</th>
-                <th>Employee Name</th>
-                <th>Employee Designation</th>
-                <th>Employee Email</th>
-                <th>Employee Phone Number</th>
-                <th>Employee Age</th>
-            </tr>
-            <tr>
-                <td colspan="100" >
-                    <p style="margin: 1em;">No employees to show</p>
-                </td>
-            </tr>
-            <tr>
-                <td class="button" colspan="100">
-                    <button onclick="window.location.href = '/employee'">+</button>
-                </td>
-            </tr>
-        </table>
+        <script src="../js/script_home_employee_list.js"></script>
     </div>
-    
-    <script src="../js/script_home_employee_list.js"></script>
 
 </body>
 </html>

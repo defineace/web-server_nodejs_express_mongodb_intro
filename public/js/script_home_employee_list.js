@@ -11,7 +11,7 @@ table_add_button = () => {
     span.innerHTML = '+';
     button_addUser.onclick = function(){ window.location.href ='/employee' };
     col.colSpan = 100;
-    col.className = 'button';
+    col.className = 'table_button';
     
     button_addUser.appendChild(span);
     col.appendChild(button_addUser);
@@ -33,7 +33,7 @@ table_add_row = ( img, id, name, designation, email, phone, age) => {
     const col_age = document.createElement('td');
 
     col_img.src = img;
-    col_img.className = "avatar";
+    col_img.className = "table_avatar";
 
     col_id.innerHTML = id;
     col_name.innerHTML = name;

@@ -1,6 +1,3 @@
-body {
-    background-color: #B2754D;
-}
 
 .header_container {
     background-color: rgb(228, 228, 228);
@@ -34,8 +31,7 @@ body {
 
 .registration_container {
     background-color: rgb(228, 228, 228);
-    
-    width: 20%;
+
     border: 3px solid black;
     border-radius: 25px;
 

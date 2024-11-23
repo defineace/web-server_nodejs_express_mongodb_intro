@@ -2,76 +2,84 @@
 
 <head>
     <link rel="stylesheet" href="../css/style_employee.css">
+    <link rel="stylesheet" href="../css/style_partial_body.css">
+    <link rel="stylesheet" href="../css/style_partial_navbar.css">
+    <link rel="stylesheet" href="../css/style_partial_search.css">
+    <link rel="stylesheet" href="../css/style_partial_section.css">
 </head>
 
 <body>
-    <div class="header_container">
-        <h1 class="header_title">Welcome</h1>
-        <div class="header_links_container">
-            <a href="/home" class="header_links">Home</a>
-            <a href="/" class="header_links">Log Out</a>
+    <%- include('./partials/partial_navbar') %>
+    <%- include('./partials/partial_search') %>
+
+    <div class="section_container">
+        <div>
+            <h2 class="section_title">Employee Details</h2>
         </div>
-        <p id="msg" class="header_msg">[Server] Welcome</p>
-    </div>
+        <div class="section_body">
+            <div class="employee_container">
+                <div class="employee_id_container">
+                    <h3>
+                        <label>Employee ID Number: </label>
+                        <span>000000000000000000000000</span>
+                    </h3>
+                </div>
 
-    <h2>Search Employee</h2>
-    <div class="container_search">
-        <input type="text" class="container_search_input">
-        <button>Search Employee</button>
-    </div>
 
-    <h2>Employee Details</h2>
-    <div class="container_employee_details"> 
-        <div class="container_employee_details_container_avatar">  
-            <img src="./assets/image -  b_roll - avatar placeholder 1.png" id="avatar" class="container_employee_details_container_avatar_img">
-            <br>
-            <input type="file" id="myFile">
-            
-            <script>
-                var avatar = document.getElementById("avatar");
-                var input_file = document.getElementById("myFile");
+                <div class="employee_avatar_container">  
+                    <div>
+                        <img src="./assets/image -  b_roll - avatar placeholder 1.png" id="avatar" class="employee_avatar">
+                    </div>
+                    <div >
+                        <input type="file" id="myFile" class="employee_input_file">
+                        <script>
+                            var avatar = document.getElementById("avatar");
+                            var input_file = document.getElementById("myFile");
 
-                input_file.addEventListener('change', (event) => {
-                    const file = event.target.files[0]; // Get the selected file
+                            input_file.addEventListener('change', (event) => {
+                                const file = event.target.files[0]; // Get the selected file
 
-                    if (file) {
-                        const reader = new FileReader();
-                        
-                        // Define what happens when the file is read
-                        reader.onload = function(e) {
-                            avatar.src = e.target.result; // Set the image source to the result of FileReader
-                        };
-                        
-                        // Read the file as a data URL
-                        reader.readAsDataURL(file);
-                    }
-                });
-            </script>
+                                if (file) {
+                                    const reader = new FileReader();
+                                    
+                                    // Define what happens when the file is read
+                                    reader.onload = function(e) {
+                                        avatar.src = e.target.result; // Set the image source to the result of FileReader
+                                    };
+                                    
+                                    // Read the file as a data URL
+                                    reader.readAsDataURL(file);
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+
+
+                <div class="employee_details_container">
+                    <p>Name</p>
+                    <input type="text" id="name" class="employee_details_input">
+
+                    <p>Designation</p>
+                    <input type="text" id="designation" class="employee_details_input">
+
+                    <p>Email</p>
+                    <input type="text" id="email" class="employee_details_input">
+
+                    <p>Phone Number</p>
+                    <input type="text" id="phone" class="employee_details_input">
+
+                    <p>Age</p>
+                    <input type="text" id="age" class="employee_details_input">
+                </div>
+
+                <div class="employee_options_container">
+                    <button onclick="employee_add()" class="employee_options_button">Add Employee</button>
+                    <button onclick="employee_update()" class="employee_options_button">Update Employee</button>
+                    <button onclick="" class="employee_options_button">Delete Employee</button>
+                </div>
+            </div>
         </div>
-
-        <div class="container_employee_details_container_information">
-            <p>Name</p>
-            <input type="text" id="name" class="container_employee_details_container_information_input">
-
-            <p>Designation</p>
-            <input type="text" id="designation" class="container_employee_details_container_information_input">
-
-            <p>Email</p>
-            <input type="text" id="email" class="container_employee_details_container_information_input">
-
-            <p>Phone Number</p>
-            <input type="text" id="phone" class="container_employee_details_container_information_input">
-
-            <p>Age</p>
-            <input type="text" id="age" class="container_employee_details_container_information_input">
-        </div>
-
-        <div class="container_employee_details_container_action">
-            <button onclick="employee_add()">Add Employee</button>
-            <button onclick="employee_update()">Update Employee</button>
-            <button>Delete Employee</button>
-        </div>
-        
     </div>
 
     <script src="../js/script_employee_add.js"></script>
